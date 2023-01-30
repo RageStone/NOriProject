@@ -1,0 +1,57 @@
+﻿html{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+body {
+    background-image: url(Photos/bBackrground.jpg)
+}
+table, th, td {
+    border: 1px solid black;
+}
+h1 {
+    color:saddlebrown;
+}
+.topnav {
+    overflow: hidden;
+    background-color: purple;
+}
+
+    .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: transform .2s;
+    }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .topnav a.active {
+            background-color: cyan;
+            color: white;
+            
+        }
+
+
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
