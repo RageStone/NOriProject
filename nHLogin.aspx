@@ -76,14 +76,14 @@
             font-size: 12px;
         }
     </style>
-    <script src="Scripts.js"></script>
+    
 <script>
     function IsValid() {
 
-        var Username = document.getElementById('username');
+        var Username = document.getElementById('UserName');
         Username.style.backgroundColor = "white";
 
-        var password1 = document.getElementById('password');
+        var password1 = document.getElementById('PassWord');
         password1.style.backgroundColor = "white";
 
         var Msg = ""; // נתחיל מהודעה ריקה
@@ -142,12 +142,12 @@
 <body>
     
     <br /><br /><br />
-    <form id="form1" runat="server" action="nHLogin.aspx" onsubmit="alert('on form'); return IsVaild();">       
+    <form id="form1" runat="server" action="nHLogin.aspx" >       
         <div style="text-align:center" class="login">     
-            <form >
+            <form onsubmit="alert('on form'); return IsVaild();">
                 <h2>Sign in</h2>
-                <input type="text" id="username" placeholder="Username"/>
-                <input type="password" id="password" placeholder="Password"/>
+                <input type="text" id="username" placeholder="UserName"/>
+                <input type="password" id="password" placeholder="PassWord"/>
                 <button type="submit" onclick="return IsVaild();">Login</button>
                 <div id="ErrorSummary">
 `               </div>

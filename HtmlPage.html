@@ -3,8 +3,74 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script>
+        function IsValid() {
+
+            var Username = document.getElementById('uname');
+            Username.style.backgroundColor = "white";
+
+            var password1 = document.getElementById('pass1');
+            password1.style.backgroundColor = "white";
+
+            var Msg = " "; // נתחיל מהודעה ריקה
+
+            if (Username.value == '') {
+                Msg = "נא למלא שם משתמש <br/>";
+                Username.focus();
+                Username.style.backgroundColor = "red";
+            }
+
+            // בדיקת קלט סיסמה
+
+            if (password1.value == '') {
+                Msg = Msg + "נא למלא סיסמה <br/>";
+                password1.focus();
+                password1.style.backgroundColor = "red";
+            }
+
+            // בדיקת אורך סיסמה
+
+            if ((password1.value.length < 4) || (password1.value.length > 8)) {
+                Msg = Msg + "נא להזין סיסמה בין 4 ל-8 תווים <br/>";
+                password1.focus();
+                password1.style.backgroundColor = "red";
+            }
+
+            // סיסמה עם ספרות ואותיות
+
+            var charCount = 0; // מונה אותיות
+            var numCount = 0; // מונה ספרות
+
+            for (i = 0; i < password1.value.length; i++) {
+                if (isNaN(password1.value.charAt(i)) == true)
+                    charCount++; // אות
+
+                else
+                    numCount++; // ספרה
+            }
+
+            if ((charCount == 0) || (numCount == 0)) {
+                Msg = Msg + "סיסמה חייבת להכיל גם ספרות וגם אותיות <br/>";
+                password1.focus();
+                password1.style.backgroundColor = "red";
+            }
+            alert('yiurmin')
+            document.getElementById('ErrorSummary').innerHTML = Msg;
+            if (Msg == "") {
+                return true; // אם הודעת שגיאה ריקה = אמת
+            }
+            else
+                return false;
+        }
+    </script>
 </head>
 <body>
-    newpage
+    <form onsubmit="return IsVaild();">
+        <h2>Sign in</h2>
+        <input type="text" id="uname" placeholder="Username" />
+        <input type="password" id="pass1" placeholder="Password" />
+        <button type="submit" >Login</button>
+        <div class="ErrorSummary" id="ErrorSummary"></div>
+    </form>
 </body>
 </html>
