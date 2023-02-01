@@ -20,10 +20,11 @@ public partial class nHLogin : System.Web.UI.Page
             if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים
             {
                 Response.Redirect("nHMain.html");
+
             }
             else //במידה והמשתמש לא קיים
             {
-                Response.Write("שם משתמש או סיסמה שגויים");
+                Response.Write("username or password are incorrect");
                 Response.AddHeader("REFRESH", "10;URL=nHLogin.aspx"); //המתנה שתי שניות ומעבר לדף ההתחברות שוב
             }
         }

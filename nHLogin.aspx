@@ -137,14 +137,11 @@
     <br /><br /><br />
     <form id="form1" runat="server" action="nHLogin.aspx" onsubmit="return IsVaild();">       
         <div style="text-align:center" class="login">     
-            <form>
                 <h2>Sign in</h2>
                 <input type="text" id="uname" placeholder="Username"/>
                 <input type="password" id="pass1" placeholder="Password"/>
                 <button type="submit" onclick="return IsVaild();">Login</button>
                 <p id="demo"></p>
-            </form>           
-
         </div>
     </form>
 </body>
