@@ -13,8 +13,8 @@ public partial class nHLogin : System.Web.UI.Page
         {
             string db = "Database.mdb";
             MyAdoHelperAccess.ConnectToDb(db);
-            string user = Request.Form["username"];
-            string pass = Request.Form["password"];
+            string user = Request.Form["uname"];
+            string pass = Request.Form["pass1"];
 
             string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
             if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים

@@ -77,80 +77,72 @@
         }
     </style>
     
-<script>
-    function IsValid() {
+    <script>
+        function IsVaild() {
 
-        var Username = document.getElementById('UserName');
-        Username.style.backgroundColor = "white";
 
-        var password1 = document.getElementById('PassWord');
-        password1.style.backgroundColor = "white";
+            let uname = document.getElementById('uname');
+            let pass1 = document.getElementById('pass1');
 
-        var Msg = ""; // נתחיל מהודעה ריקה
+            //the text
+            let text = "";
 
-        if (Username.value == '') {
-            Msg = "נא למלא שם משתמש <br/>";
-            Username.focus();
-            Username.style.backgroundColor = "red";
+            //checking uname
+
+            //checking if fname is long enough or too short
+            if ((uname.value.length < 2) || (uname.value.length > 8)) {
+                text = text + "<br/> Username must be atleast then 2 letters and no more then 8";
+                uname.focus();
+                uname.style.backgroundColor = "red";
+                document.getElementById("demo").innerHTML = text;
+            }
+
+
+            if ((pass1.value.length < 4) || (pass1.value.length > 8)) {
+                text = text + "<br/> Password must be atleast then 4 letters and no more then 8";
+                pass1.focus();
+                pass1.style.backgroundColor = "red";
+                document.getElementById("demo").innerHTML = text;
+            }
+
+            //password with letters and numbers
+
+            var charCount = 0; // מונה אותיות
+            var numCount = 0; // מונה ספרות
+
+            for (i = 0; i < pass1.value.length; i++) {
+                if (isNaN(pass1.value.charAt(i)) == true)
+                    charCount++; // אות
+
+                else
+                    numCount++; // ספרה
+            }
+
+            if ((charCount == 0) || (numCount == 0)) {
+                text = text + "<br/> A password must contain letters AND numbers";
+                pass1.focus();
+                pass1.style.backgroundColor = "red";
+                document.getElementById("demo").innerHTML = text;
+            }
+
+            if (text != "") {
+                return false;
+            }
         }
-
-        // בדיקת קלט סיסמה
-
-        if (password1.value == '') {
-            Msg = Msg + "נא למלא סיסמה <br/>";
-            password1.focus();
-            password1.style.backgroundColor = "red";
-        }
-
-        // בדיקת אורך סיסמה
-
-        if ((password1.value.length < 4) || (password1.value.length > 8)) {
-            Msg = Msg + "נא להזין סיסמה בין 4 ל-8 תווים <br/>";
-            password1.focus();
-            password1.style.backgroundColor = "red";
-        }
-
-        // סיסמה עם ספרות ואותיות
-
-        var charCount = 0; // מונה אותיות
-        var numCount = 0; // מונה ספרות
-
-        for (i = 0; i < password1.value.length; i++) {
-            if (isNaN(password1.value.charAt(i)) == true)
-                charCount++; // אות
-
-            else
-                numCount++; // ספרה
-        }
-
-        if ((charCount == 0) || (numCount == 0)) {
-            Msg = Msg + "סיסמה חייבת להכיל גם ספרות וגם אותיות <br/>";
-            password1.focus();
-            password1.style.backgroundColor = "red";
-        }
-
-        document.getElementById('ErrorSummary').innerHTML = Msg;
-        if (Msg == "") {
-            return true; // אם הודעת שגיאה ריקה = אמת
-        }
-        else
-            return false;
-    }
     </script>
     
 </head>
 <body>
     
     <br /><br /><br />
-    <form id="form1" runat="server" action="nHLogin.aspx" >       
+    <form id="form1" runat="server" action="nHLogin.aspx" onsubmit="return IsVaild();">       
         <div style="text-align:center" class="login">     
-            <form onsubmit="alert('on form'); return IsVaild();">
+            <form>
                 <h2>Sign in</h2>
-                <input type="text" id="username" placeholder="UserName"/>
-                <input type="password" id="password" placeholder="PassWord"/>
+                <input type="text" id="uname" placeholder="Username"/>
+                <input type="password" id="pass1" placeholder="Password"/>
                 <button type="submit" onclick="return IsVaild();">Login</button>
-                <div id="ErrorSummary">
-`               </div>
+                <p id="demo"></p>
             </form>           
 
         </div>
