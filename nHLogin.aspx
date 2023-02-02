@@ -8,6 +8,7 @@
     <style>
         body {
             background-image: url(Photos/bBackrground.jpg);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
         }
 
         .login {
@@ -65,16 +66,14 @@
                     text-shadow: 1px 1px 3px #23203b;
                     font-family: 'Source Sans Pro', sans-serif;
         }
-
-
-        a {
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.6);
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
-            font-size: 12px;
+        h4{
+            font-size:25px;
+            font-weight: 300;
+            color: #8d8d8d;
+            display:flow;
+            font-family: 'Source Sans Pro', sans-serif;
         }
+
     </style>
     
     <script>
@@ -140,9 +139,12 @@
                 <h2>Sign in</h2>
                 <input type="text" id="uname" placeholder="Username"/>
                 <input type="password" id="pass1" placeholder="Password"/>
+                <h4>Dont Have An Account? <a href="nHRegister.html">Sign Up</a></h4>
+                
                 <button type="submit" onclick="return IsVaild();">Login</button>
                 <p id="demo"></p>
         </div>
     </form>
+    
 </body>
 </html>
