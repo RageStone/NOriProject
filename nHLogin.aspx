@@ -8,7 +8,7 @@
     <style>
         body {
             background-image: url(Photos/bBackrground.jpg);
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            
         }
 
         .login {
