@@ -15,12 +15,11 @@ public partial class nHLogin : System.Web.UI.Page
             MyAdoHelperAccess.ConnectToDb(db);
             string user = Request.Form["uname"];
             string pass = Request.Form["pass1"];
-
+            
             string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
             if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים
             {
                 Response.Redirect("nHMain.html");
-
             }
             else //במידה והמשתמש לא קיים
             {
