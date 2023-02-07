@@ -13,15 +13,29 @@ public partial class nHRegister : System.Web.UI.Page
         {
             string db = "Database.mdb";
             MyAdoHelperAccess.ConnectToDb(db);
+            string uname = Request.Form["uname"];
             string fname = Request.Form["fname"];
             string lname = Request.Form["lname"];
+            string pass = Request.Form["pass1"];
+            //string bday = Request.Form["bday"];
+            string email = Request.Form["email"];
 
-            if (fname != null && lname != null)
+
+            string search = "select * from [tbl_users] where uname='"+uname+"';";
+            string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "');";
+
+            if (MyAdoHelperAccess.IsExist("Database.mdb", search) == true)
             {
-                string creation = "INSERT INTO tbl_users (fname, lname) VALUES (test, lname)";
-                MyAdoHelperAccess.DoQuery("Database.mdb", creation);
+                Response.Write("user already exists");
             }
-            
+            else
+            {
+                MyAdoHelperAccess.DoQuery("Database.mdb", creation);
+                Response.Write("User created successfully");
+                Response.AddHeader("REFRESH", "5;URL=nHMain.html");
+            }
+
+
             /*
             string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
             if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים
