@@ -25,6 +25,7 @@
             let uname = document.getElementById('uname');
             let pass1 = document.getElementById('pass1');
             let pass2 = document.getElementById('pass2');
+            
 
             //the text
             let text = "";
@@ -193,6 +194,7 @@
             font-family: 'Source Sans Pro', sans-serif;
         }
     </style>
+
 </head>
 <body>
     <form id="form1" runat="server" action="nHRegister.aspx" onsubmit="return validateForm()" method="post">
@@ -218,6 +220,8 @@
 
                 <h4>Already Have An Account? <a href="nHLogin.aspx">Sign in</a></h4>
                 <button type="submit">Submit</button>
+        
+              
                 <p id="demo"></p>
             </div>
     </form>

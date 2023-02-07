@@ -20,6 +20,7 @@ public partial class nHRegister : System.Web.UI.Page
             //string bday = Request.Form["bday"];
             string email = Request.Form["email"];
 
+            string yn = " ";
 
             string search = "select * from [tbl_users] where uname='"+uname+"';";
             string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "');";
@@ -27,14 +28,18 @@ public partial class nHRegister : System.Web.UI.Page
             if (MyAdoHelperAccess.IsExist("Database.mdb", search) == true)
             {
                 Response.Write("user already exists");
+                Response.AddHeader("REFRESH", "5;URL=nHRegister.aspx");
+                yn = "User already exists";
             }
             else
             {
                 MyAdoHelperAccess.DoQuery("Database.mdb", creation);
                 Response.Write("User created successfully");
+                yn = "User created successfully";
                 Response.AddHeader("REFRESH", "5;URL=nHMain.html");
+                
             }
-
+            yn = "error";
 
             /*
             string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
@@ -48,5 +53,6 @@ public partial class nHRegister : System.Web.UI.Page
                 Response.AddHeader("REFRESH", "10;URL=nHLogin.aspx"); //המתנה שתי שניות ומעבר לדף ההתחברות שוב
             }*/
         }
+        
     }
 }
