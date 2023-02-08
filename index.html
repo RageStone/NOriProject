@@ -3,8 +3,120 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link href="OfStyleSheet.css" rel="stylesheet" />
+    <style>
+        h2 {
+            position: relative;
+            animation-name: example;
+            animation-duration: 5s;
+            animation-delay: 0s;
+            z-index: 3;
+            position: absolute;
+            text-align: center;
+            opacity: 0%;
+        }
+
+        @keyframes example {
+            0% {
+                font-size: 50px;
+                left: 50%;
+                top: 50%;
+                opacity: 100%;
+            }
+
+            25% {
+                font-size: 50px;
+                left: 50%;
+                top: 50%;
+                opacity: 100%;
+            }
+
+            50% {
+                font-size: 50px;
+                left: 50%;
+                top: 50%;
+                opacity: 100%;
+            }
+
+            75% {
+                font-size: 50px;
+                left: 50%;
+                top: 50%;
+                opacity: 100%;
+            }
+
+            100% {
+                font-size: 20px;
+                left: 50%;
+                top: 0px;
+                opacity: 0%;
+            }
+        }
+    </style>
+    <style>
+        .tetext {
+            /*background-color: white;*/
+            animation-name: bground;
+            animation-duration: 3s;
+            animation-delay: 0s;
+            opacity:100%;
+        }
+
+        @keyframes bground {
+            0% {
+                opacity: 0%;
+                
+            }
+            100% {
+                opacity: 100%;
+              
+            }
+        }
+    </style>
+    <style>
+        .firsyt {
+            animation-name: fist;
+            animation-duration: 4s;
+            animation-delay: 0s;
+        }
+        @keyframes fist{
+            0% {
+                opacity: 0%;
+                
+            }
+            25% {
+                opacity: 0%;
+               
+            }
+            100% {
+                opacity: 100%;
+              
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>hello</h1>
+
+
+    <div class="bground"> </div>
+    <div class="firsyt">
+        <div class="topnav">
+            <a class="float" style="background-color: aqua; color: black;" href="nHMain.html">Home</a>
+            <a class="float" href="nHTable.html">Characters</a>
+            <a class="float" href="nHAbout.html">About Me</a>
+            <a class="float" href="#about">Other</a>
+            <a class="float" style="float:right" href="nHLogin.aspx">Login</a>
+            <a class="float" style="float:right" href="nHRegister.aspx">Register</a>
+        </div>
+    </div>
+    <div class="tetext">
+        <h1 class="glow" style="color:purple;">Family Guy</h1>
+    </div>
+    <div class="firsyt">
+        <h3 style="text-align: left; display: inline-block; border:2px solid black; width: 1000px; background-color: azure">idfk what to put here</h3>
+        <img src="Photos/seth.jpg" style="float: right; display: inline-block; border: 2px solid white; width: 463.6px; height: 682.6px; background-color: azure " />
+
+    </div>
+
 </body>
 </html>
