@@ -25,7 +25,10 @@
             let uname = document.getElementById('uname');
             let pass1 = document.getElementById('pass1');
             let pass2 = document.getElementById('pass2');
-            
+            let male = document.getElementById('male');
+            let female = document.getElementById('female');
+            let gender = document.getElementById('gender');
+
 
             //the text
             let text = "";
@@ -53,6 +56,13 @@
                 text = text + "<br /> No bdate";
                 bdate.focus();
                 bdate.style.backgroundColor = "red";
+                document.getElementById("demo").innerHTML = text;
+            }
+            //checking gender
+            if ((male.checked == false) && (female.checked == false)) {
+                text = text + "<br /> Please select a gender";
+                gender.focus();
+                gender.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
             }
             //checking phone
@@ -194,7 +204,47 @@
             font-family: 'Source Sans Pro', sans-serif;
         }
     </style>
+    <style>
+         @import url(https://fonts.googleapis.com/css?family=Lato);
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
 
+        label {
+            user-select: none;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+            input[type="radio"] + label {
+                z-index: 10;
+                margin: 0 10px 10px 0;
+                position: relative;
+                color: #ced4da;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+                font-weight: bold;
+                background-color: #ffffff;
+                border: 2px solid #ced4da;
+                cursor: pointer;
+                transition: all 200ms ease;
+            }
+
+            input[type="radio"]:checked + label {
+                color: #495057;
+                background-color: #ced4da;
+            }
+
+            input[type="radio"] + label {
+                padding: 5px 20px;
+                border-radius: 10px;
+            }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server" action="nHRegister.aspx" onsubmit="return validateForm()" method="post">
@@ -206,8 +256,13 @@
 
                 <input type="date" name="bdate" id="bdate" placeholder="Birth Date"/>
 
-                Gender: <input type="radio" name="gender" id="male" value="male" placeholder="Male" />
-                <input type="radio" name="gender" id="female" value="female" /> Female <br />
+                    <div class="container" id="gender">
+                        <input type='radio' id='male'  name='radio'/>
+                        <label for='male'>Male</label>
+                        <input type='radio' id='female' name='radio'/>
+                        <label for='female'>Female</label>
+                    </div>
+
                 <input type="number" name="phone" id="phone" placeholder="Phone Number"/>
 
                 <input type="email" name="email" id="email" placeholder="Email"/>

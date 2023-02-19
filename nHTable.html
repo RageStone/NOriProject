@@ -3,23 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <title>Characters</title>
-    <link href="OfStyleSheet.css" rel="stylesheet"/>
+    <link href="OfStyleSheet.css" rel="stylesheet" />
     <style>
         table, th, td {
             border: 5px solid black;
         }
-        
     </style>
+
 </head>
 <body>
     <div class="topnav">
         <a class="float" href="nHMain.html">Home</a>
-        <a class="float"  style="background-color: aqua; color: black;" href="nHTable.html">Characters</a>
+        <a class="float" style="background-color: aqua; color: black;" href="nHTable.html">Characters</a>
         <a class="float" href="nHAbout.html">About Me</a>
         <a class="float" href="#about">Other</a>
         <a class="float" style="float:right" href="nHLogin.aspx">Login</a>
         <a class="float" style="float:right" href="nHRegister.aspx">Register</a>
+        <div class="float" style="color:white; float:right">Vists: <div class="website-counter" style="float:right; color: white"></div></div>
+
     </div>
+    <script>
+        var counterContainer = document.querySelector(".website-counter");
+        var resetButton = document.querySelector("#reset");
+        var visitCount = localStorage.getItem("page_view");
+
+        // Check if page_view entry is present
+        if (visitCount) {
+            visitCount = Number(visitCount) + 1;
+            localStorage.setItem("page_view", visitCount);
+        } else {
+            visitCount = 1;
+            localStorage.setItem("page_view", 1);
+        }
+        counterContainer.innerHTML = visitCount;
+    </script>
     <h1 class="glow" style="color:purple;">Family Guy</h1>
     <table style="width: 100%; background-color: white;">
         <tr>

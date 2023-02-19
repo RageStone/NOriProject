@@ -20,39 +20,45 @@ public partial class nHRegister : System.Web.UI.Page
             //string bday = Request.Form["bday"];
             string email = Request.Form["email"];
 
-            string yn = " ";
+            string phone = Request.Form["phone"];
+            string cellNum = phone.Substring(0, 3);
+            string phoneNum = phone.Substring(3, 7);
+            Response.Write(cellNum + "-" + phoneNum);
 
-            string search = "select * from [tbl_users] where uname='"+uname+"';";
-            string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "');";
+                string yn = " ";
 
-            if (MyAdoHelperAccess.IsExist("Database.mdb", search) == true)
-            {
-                Response.Write("user already exists");
-                Response.AddHeader("REFRESH", "5;URL=nHRegister.aspx");
-                yn = "User already exists";
-            }
-            else
-            {
-                MyAdoHelperAccess.DoQuery("Database.mdb", creation);
-                Response.Write("User created successfully");
-                yn = "User created successfully";
-                Response.AddHeader("REFRESH", "5;URL=nHMain.html");
-                
-            }
-            yn = "error";
+                string search = "select * from [tbl_users] where uname='" + uname + "';";
+                string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "','"+ cellNum +"','"+ phoneNum +"');";
 
-            /*
-            string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
-            if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים
-            {
-                Response.Redirect("nHMain.html");
-            }
-            else //במידה והמשתמש לא קיים
-            {
-                Response.Write("username or password are incorrect");
-                Response.AddHeader("REFRESH", "10;URL=nHLogin.aspx"); //המתנה שתי שניות ומעבר לדף ההתחברות שוב
-            }*/
+                if (MyAdoHelperAccess.IsExist("Database.mdb", search) == true)
+                {
+                    Response.Write("user already exists " + uname);
+                    Response.AddHeader("REFRESH", "5;URL=nHRegister.aspx");
+                    yn = "User already exists";
+                }
+                else
+                {
+                    MyAdoHelperAccess.DoQuery("Database.mdb", creation);
+                    Response.Write("User created successfully");
+                    yn = "User created successfully";
+                    Response.AddHeader("REFRESH", "5;URL=nHMain.html");
+
+                }
+                yn = "error";
+
+                /*
+                string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
+                if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים
+                {
+                    Response.Redirect("nHMain.html");
+                }
+                else //במידה והמשתמש לא קיים
+                {
+                    Response.Write("username or password are incorrect");
+                    Response.AddHeader("REFRESH", "10;URL=nHLogin.aspx"); //המתנה שתי שניות ומעבר לדף ההתחברות שוב
+                }*/
+            
+
         }
-        
     }
 }

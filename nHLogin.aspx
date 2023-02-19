@@ -139,7 +139,7 @@
                 <h2>Sign in</h2>
                 <input type="text" id="uname" name="uname" placeholder="Username"/>
                 <input type="password" id="pass1" name="pass1" placeholder="Password"/>
-                <h4>Dont Have An Account? <a href="nHRegister.html">Sign Up</a></h4>
+                <h4>Dont Have An Account? <a href="nHRegister.aspx">Sign Up</a></h4>
                 
                 <button type="submit" onclick="return IsVaild();">Login</button>
                 <p id="demo"></p>
