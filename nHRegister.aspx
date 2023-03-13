@@ -257,9 +257,9 @@
                 <input type="date" name="bdate" id="bdate" placeholder="Birth Date"/>
 
                     <div class="container" id="gender">
-                        <input type='radio' id='male'  name='radio'/>
+                        <input type='radio' id='male'  name='gender'/>
                         <label for='male'>Male</label>
-                        <input type='radio' id='female' name='radio'/>
+                        <input type='radio' id='female' name='gender'/>
                         <label for='female'>Female</label>
                     </div>
 
@@ -275,7 +275,7 @@
 
                 <h4>Already Have An Account? <a href="nHLogin.aspx">Sign in</a></h4>
                 <button type="submit">Submit</button>
-        
+                
               
                 <p id="demo"></p>
             </div>

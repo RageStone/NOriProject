@@ -23,12 +23,20 @@ public partial class nHRegister : System.Web.UI.Page
             string phone = Request.Form["phone"];
             string cellNum = phone.Substring(0, 3);
             string phoneNum = phone.Substring(3, 7);
-            Response.Write(cellNum + "-" + phoneNum);
+            //Response.Write(cellNum + "-" + phoneNum);
+            
+            string gender = " ";
+            if (Request.Form["Gender"] != null)
+            {
+                 gender = Request.Form["Gender"];
+            }
+            //Response.Write(gender);
 
-                string yn = " ";
+            
+            string yn = " ";
 
                 string search = "select * from [tbl_users] where uname='" + uname + "';";
-                string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "','"+ cellNum +"','"+ phoneNum +"');";
+                string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email, gender, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "','"+ gender + "','" + cellNum +"','"+ phoneNum +"');";
 
                 if (MyAdoHelperAccess.IsExist("Database.mdb", search) == true)
                 {
