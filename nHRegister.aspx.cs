@@ -17,14 +17,14 @@ public partial class nHRegister : System.Web.UI.Page
             string fname = Request.Form["fname"];
             string lname = Request.Form["lname"];
             string pass = Request.Form["pass1"];
-            //string bday = Request.Form["bday"];
+            
             string email = Request.Form["email"];
 
             string phone = Request.Form["phone"];
             string cellNum = phone.Substring(0, 3);
             string phoneNum = phone.Substring(3, 7);
             //Response.Write(cellNum + "-" + phoneNum);
-            
+            //string bday = Request.Form["bday"];
             string gender = " ";
             if (Request.Form["Gender"] != null)
             {
@@ -42,13 +42,11 @@ public partial class nHRegister : System.Web.UI.Page
                 {
                     Response.Write("user already exists " + uname);
                     Response.AddHeader("REFRESH", "5;URL=nHRegister.aspx");
-                    yn = "User already exists";
                 }
                 else
                 {
                     MyAdoHelperAccess.DoQuery("Database.mdb", creation);
                     Response.Write("User created successfully");
-                    yn = "User created successfully";
                     Response.AddHeader("REFRESH", "5;URL=nHMain.html");
 
                 }
