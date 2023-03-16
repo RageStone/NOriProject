@@ -17,12 +17,11 @@ public partial class nHRegister : System.Web.UI.Page
             string fname = Request.Form["fname"];
             string lname = Request.Form["lname"];
             string pass = Request.Form["pass1"];
-            
             string email = Request.Form["email"];
-
             string phone = Request.Form["phone"];
             string cellNum = phone.Substring(0, 3);
             string phoneNum = phone.Substring(3, 7);
+
             //Response.Write(cellNum + "-" + phoneNum);
             //string bday = Request.Form["bday"];
             string gender = " ";
@@ -33,7 +32,6 @@ public partial class nHRegister : System.Web.UI.Page
             //Response.Write(gender);
 
             
-            string yn = " ";
 
                 string search = "select * from [tbl_users] where uname='" + uname + "';";
                 string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email, gender, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "','"+ gender + "','" + cellNum +"','"+ phoneNum +"');";
@@ -50,21 +48,6 @@ public partial class nHRegister : System.Web.UI.Page
                     Response.AddHeader("REFRESH", "5;URL=nHMain.html");
 
                 }
-                yn = "error";
-
-                /*
-                string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
-                if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים
-                {
-                    Response.Redirect("nHMain.html");
-                }
-                else //במידה והמשתמש לא קיים
-                {
-                    Response.Write("username or password are incorrect");
-                    Response.AddHeader("REFRESH", "10;URL=nHLogin.aspx"); //המתנה שתי שניות ומעבר לדף ההתחברות שוב
-                }*/
-            
-
         }
     }
 }
