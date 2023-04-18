@@ -16,9 +16,9 @@
         Application["VisitCount"] = (int)Application["VisitCount"] + 1;
     Response.Write("מספר המבקרים עד כה:" + Application["VisitCount"]);
 %>
-    
-
     </div>
+       
     </form>
+     <button onclick="history.go(-1)">Go Back</button>
 </body>
 </html>

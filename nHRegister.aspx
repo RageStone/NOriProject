@@ -257,9 +257,9 @@
                 <input type="date" name="bdate" id="bdate" placeholder="Birth Date"/>
 
                     <div class="container" id="gender">
-                        <input type='radio' id='male'  name='gender'/>
+                        <input type='radio' id="male"  name="gender"/>
                         <label for='male'>Male</label>
-                        <input type='radio' id='female' name='gender'/>
+                        <input type='radio' id="female" name="gender"/>
                         <label for='female'>Female</label>
                     </div>
 
