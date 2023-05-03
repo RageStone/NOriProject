@@ -4,11 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
+        <link rel="icon" type="image/png" href="Photos/familyGuyLogo.png" />
     <style>
         body {
             background-image: url(Photos/bBackrground-blurred.jpg);
-            
         }
 
         .login {
@@ -139,7 +139,7 @@
                 <h2>Sign in</h2>
                 <input type="text" id="uname" name="uname" placeholder="Username"/>
                 <input type="password" id="pass1" name="pass1" placeholder="Password"/>
-                <h4>Dont Have An Account? <a href="nHRegister.aspx">Sign Up</a></h4>
+                <h4>Dont Have An Account? <a href="nHRegister.html">Sign Up</a></h4>
                 
                 <button type="submit" onclick="return IsVaild();">Login</button>
                 <p id="demo"></p>

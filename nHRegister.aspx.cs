@@ -25,16 +25,18 @@ public partial class nHRegister : System.Web.UI.Page
             //Response.Write(cellNum + "-" + phoneNum);
             //string bday = Request.Form["bday"];
             string gender = " ";
-            if (Request.Form["Gender"] != null)
+
+            /*if (Request.Form["Gender"] != null)
             {
                  gender = Request.Form["Gender"];
-            }
+            }*/
+
             //Response.Write(gender);
 
             
 
                 string search = "select * from [tbl_users] where uname='" + uname + "';";
-                string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email, gender, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "','"+ gender + "','" + cellNum +"','"+ phoneNum +"');";
+                string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email, gender, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass + "','" + email + "','"+ Request.Form["Gender"] + "','" + cellNum +"','"+ phoneNum +"');";
 
                 if (MyAdoHelperAccess.IsExist("Database.mdb", search) == true)
                 {

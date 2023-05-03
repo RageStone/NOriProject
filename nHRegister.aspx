@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Register</title>
+        <link rel="icon" type="image/png" href="Photos/familyGuyLogo.png" />
         <script>
         function validateForm() {
             /*
@@ -92,8 +93,8 @@
             }
 
 
-            if ((pass1.value.length < 4) || (pass1.value.length > 8)) {
-                text = text + "<br/> Password must be atleast then 4 letters and no more then 8";
+            if ((pass1.value.length < 4) || (pass1.value.length > 12)) {
+                text = text + "<br/> Password must be atleast then 4 letters and no more then 12";
                 pass1.focus();
                 pass1.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
@@ -214,6 +215,7 @@
             font-family: 'Source Sans Pro', sans-serif;
         }
 
+
         label {
             user-select: none;
         }
@@ -239,7 +241,10 @@
                 color: #495057;
                 background-color: #ced4da;
             }
-
+            input[type="radio"]:hover + label{
+                color: #495057;
+                background-color: #ced4da;
+            }
             input[type="radio"] + label {
                 padding: 5px 20px;
                 border-radius: 10px;
@@ -247,6 +252,7 @@
     </style>
 </head>
 <body>
+    <br />
     <form id="form1" runat="server" action="nHRegister.aspx" onsubmit="return validateForm()" method="post">
         <div class="login" style="text-align:center">
                 <h2>Register</h2>
@@ -256,7 +262,7 @@
 
                 <input type="date" name="bdate" id="bdate" placeholder="Birth Date"/>
 
-                    <div class="container" id="gender">
+                    <div class="container" name="gender">
                         <input type='radio' id="male"  name="gender"/>
                         <label for='male'>Male</label>
                         <input type='radio' id="female" name="gender"/>
