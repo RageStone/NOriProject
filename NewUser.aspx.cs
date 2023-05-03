@@ -22,12 +22,12 @@ public partial class NewUser : System.Web.UI.Page
                 string email = Request.Form["email"];
                 string phone = Request.Form["phone"];
                 string bday = Request.Form["bday"];
-                string cellNum = phone.Substring(0, 3);
-                string phoneNum = phone.Substring(3, 7);
-                if(uname == null || fname == null || lname == null || pass == null || email == null || phone == null)
+               // string cellNum = phone.Substring(0, 3);
+               // string phoneNum = phone.Substring(3, 7);
+                if(uname == "" || fname == "" || lname == "" || pass == "" || email == "" || phone == "")
                 {
                     Response.Write("NOOOOOOOO");
-                    Response.AddHeader("REFRESH", "5;URL=nHRegister.html");
+                    //Response.AddHeader("REFRESH", "5;URL=nHRegister.html");
                 }
                 if(bday == "")
                 {
@@ -35,7 +35,8 @@ public partial class NewUser : System.Web.UI.Page
                     Response.AddHeader("REFRESH", "5;URL=nHRegister.html");
                     
                 }
-               // string uname = Request.Form["uname"]; //הגדרת משתמש לחיפוש
+                
+                // string uname = Request.Form["uname"]; //הגדרת משתמש לחיפוש
                 string sql = "select * from tbl_users where uname= '" + uname + "'";
                
                 if (MyAdoHelperAccess.IsExist(db, sql)) //אם שם המשתמש קיים
@@ -48,12 +49,19 @@ public partial class NewUser : System.Web.UI.Page
                 {
                     string bbday = "no bitches";
                     //string message = "message ur mom";
-                   /* sql = "INSERT INTO tbl_users (uname, Fname, Lname, upass, bday, email, gender, cellNum, phoneNum)";
-                    sql += " VALUES ('" + Request.Form["uname"] + "' , '" + Request.Form["fname"] + "' , '" + Request.Form["lname"] + "' , '" + Request.Form["pass1"];
-                    sql += "' , '" + bbday + "' , '" + Request.Form["email"] + "' , '" + Request.Form["gender"] + "' , '" + cellNum + "' , '" + phoneNum;
-                    sql += "');";*/
+                    /* sql = "INSERT INTO tbl_users (uname, Fname, Lname, upass, bday, email, gender, cellNum, phoneNum)";
+                     sql += " VALUES ('" + Request.Form["uname"] + "' , '" + Request.Form["fname"] + "' , '" + Request.Form["lname"] + "' , '" + Request.Form["pass1"];
+                     sql += "' , '" + bbday + "' , '" + Request.Form["email"] + "' , '" + Request.Form["gender"] + "' , '" + cellNum + "' , '" + phoneNum;
+                     sql += "');";*/
+                    string cellNum = "no";
+                    string phoneNum = "bitches";
+                    if(phone != "")
+                    {
+                         cellNum = phone.Substring(0, 3);
+                         phoneNum = phone.Substring(3, 7);
+                    }
+                    
 
-                   
                     string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email, gender, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass+ "','" + email + "','" + Request.Form["Gender"] + "','" + cellNum + "','" + phoneNum + "');";
 
 
