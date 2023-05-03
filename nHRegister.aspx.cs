@@ -19,8 +19,14 @@ public partial class nHRegister : System.Web.UI.Page
             string pass = Request.Form["pass1"];
             string email = Request.Form["email"];
             string phone = Request.Form["phone"];
-            string cellNum = phone.Substring(0, 3);
-            string phoneNum = phone.Substring(3, 7);
+            string cellNum = "";
+            string phoneNum = "";
+            if (phone != "")
+            {
+                 cellNum = phone.Substring(1, 3);
+                 phoneNum = phone.Substring(3, 7);
+            }
+            
 
             //Response.Write(cellNum + "-" + phoneNum);
             //string bday = Request.Form["bday"];

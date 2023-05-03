@@ -26,8 +26,8 @@
             let uname = document.getElementById('uname');
             let pass1 = document.getElementById('pass1');
             let pass2 = document.getElementById('pass2');
-            let male = document.getElementById('male');
-            let female = document.getElementById('female');
+            //let male = document.getElementById('male');
+            //let female = document.getElementById('female');
             let gender = document.getElementById('gender');
 
 
@@ -60,12 +60,12 @@
                 document.getElementById("demo").innerHTML = text;
             }
             //checking gender
-            if ((male.checked == false) && (female.checked == false)) {
+            /*if ((gender.checked == false) ) {
                 text = text + "<br /> Please select a gender";
                 gender.focus();
                 gender.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
-            }
+            }*/
             //checking phone
 
             //checking phone length
@@ -280,7 +280,7 @@
                 <input type="password" name="pass2" id="pass2" placeholder="Confirm Password"/>
 
                 <h4>Already Have An Account? <a href="nHLogin.aspx">Sign in</a></h4>
-                <button type="submit">Submit</button>
+                <button type="submit" onclick="return validateForm();">Submit</button>
                 
               
                 <p id="demo"></p>

@@ -27,6 +27,7 @@ public partial class NewUser : System.Web.UI.Page
                 if(uname == "" || fname == "" || lname == "" || pass == "" || email == "" || phone == "")
                 {
                     Response.Write("NOOOOOOOO");
+                  //  return;
                     //Response.AddHeader("REFRESH", "5;URL=nHRegister.html");
                 }
                 if(bday == "")

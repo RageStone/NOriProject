@@ -23,8 +23,8 @@
             let uname = document.getElementById('uname');
             let pass1 = document.getElementById('pass1');
             let pass2 = document.getElementById('pass2');
-            let male = document.getElementById('male');
-            let female = document.getElementById('female');
+           // let male = document.getElementById('male');
+           // let female = document.getElementById('female');
             let gender = document.getElementById('gender');
 
 
@@ -51,18 +51,18 @@
             }
             //checking date
             if (bdate.value == "") {
-                text = text + "<br /> No bdate";
+                text = text + "<br /> No date";
                 bdate.focus();
                 bdate.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
             }
             //checking gender
-            if ((male.checked == false) && (female.checked == false)) {
+            /*if ((gender.value == "")) {
                 text = text + "<br /> Please select a gender";
                 gender.focus();
                 gender.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
-            }
+            }*/
             //checking phone
 
             //checking phone length
@@ -223,7 +223,38 @@
         label {
             user-select: none;
         }
+        input[type="checkbox"] {
+            display: none;
+        }
 
+            input[type="checkbox"] + label {
+                z-index: 10;
+                margin: 0 10px 10px 0;
+                position: relative;
+                color: #ced4da;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+                font-weight: bold;
+                background-color: #ffffff;
+                border: 2px solid #ced4da;
+                cursor: pointer;
+                transition: all 200ms ease;
+            }
+
+            input[type="checkbox"]:checked + label {
+                color: #495057;
+                background-color: #ced4da;
+            }
+
+            input[type="checkbox"]:hover + label {
+                color: #495057;
+                background-color: #a8acb1;
+            }
+
+            input[type="checkbox"] + label {
+                padding: 5px 20px;
+                border-radius: 10px;
+            }
+        
         input[type="radio"] {
             display: none;
         }
@@ -266,7 +297,7 @@
 
             <input type="text" name="lname" id="lname" placeholder="Lastname" />
 
-            <input type="date" name="bdate" id="bdate" placeholder="Birth Date" value=""/>
+            <input type="date" name="bdate" id="bdate" placeholder="Birth Date" />
 
             <div class="container" name="gender">
                 <input type='radio' id="male" name="gender" value="male" />
@@ -284,10 +315,14 @@
             <input type="password" name="pass1" id="pass1" placeholder="Password" />
 
             <input type="password" name="pass2" id="pass2" placeholder="Confirm Password" />
-
+            <div class="container">
+                <input type="checkbox" name="terms" id="terms" value="agree" />
+                <label style="color:#454545" for='terms'>Please allow terms</label>
+            </div>
+            
             <h4>Already Have An Account? <a href="nHLogin.aspx">Sign in</a></h4>
-            <button type="submit" name="submit" id="submit" value="submit" >Submit</button>
-         
+            <button type="submit" name="submit" id="submit" value="submit" onclick="return validateForm();">Submit</button>
+
 
             <p id="demo"></p>
         </div>
