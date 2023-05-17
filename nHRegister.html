@@ -26,6 +26,7 @@
            // let male = document.getElementById('male');
            // let female = document.getElementById('female');
             let gender = document.getElementById('gender');
+            let gender1 = document.getElementsByName('gender');
 
 
             //the text
@@ -57,12 +58,12 @@
                 document.getElementById("demo").innerHTML = text;
             }
             //checking gender
-            /*if ((gender.value == "")) {
+            if ((gender1.value == "")) {
                 text = text + "<br /> Please select a gender";
                 gender.focus();
                 gender.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
-            }*/
+            }
             //checking phone
 
             //checking phone length
@@ -223,9 +224,10 @@
         label {
             user-select: none;
         }
-        input[type="checkbox"] {
+        /*input[type="checkbox"] {
             display: none;
-        }
+        }*/
+
 
             input[type="checkbox"] + label {
                 z-index: 10;
@@ -297,7 +299,7 @@
 
             <input type="text" name="lname" id="lname" placeholder="Lastname" />
 
-            <input type="date" name="bdate" id="bdate" placeholder="Birth Date" />
+            <input type="date" name="bdate" id="bdate" placeholder="Birth Date" value=""/>
 
             <div class="container" name="gender">
                 <input type='radio' id="male" name="gender" value="male" />
@@ -316,8 +318,10 @@
 
             <input type="password" name="pass2" id="pass2" placeholder="Confirm Password" />
             <div class="container">
-                <input type="checkbox" name="terms" id="terms" value="agree" />
-                <label style="color:#454545" for='terms'>Please allow terms</label>
+                <label>
+                    <input type="checkbox" name="terms" id="terms" value="agree" />
+                    <label style="color:#454545" for='terms'>Please allow terms</label>
+                </label>
             </div>
             
             <h4>Already Have An Account? <a href="nHLogin.aspx">Sign in</a></h4>

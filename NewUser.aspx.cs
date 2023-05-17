@@ -21,7 +21,7 @@ public partial class NewUser : System.Web.UI.Page
                 string pass = Request.Form["pass1"];
                 string email = Request.Form["email"];
                 string phone = Request.Form["phone"];
-                string bday = Request.Form["bday"];
+                string bday = Request.Form["bdate"];
                // string cellNum = phone.Substring(0, 3);
                // string phoneNum = phone.Substring(3, 7);
                 if(uname == "" || fname == "" || lname == "" || pass == "" || email == "" || phone == "")
@@ -63,11 +63,12 @@ public partial class NewUser : System.Web.UI.Page
                     }
                     
 
-                    string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, email, gender, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass+ "','" + email + "','" + Request.Form["Gender"] + "','" + cellNum + "','" + phoneNum + "');";
+                    string creation = "INSERT INTO tbl_users ( uname, fname, lname, upass, bday, email, gender, cellNum, phoneNum ) VALUES('" + uname + "', '" + fname + "', '" + lname + "', '" + pass+ "','" + bday + "','" + email + "','" + Request.Form["Gender"] + "','" + cellNum + "','" + phoneNum + "');";
 
 
                     MyAdoHelperAccess.DoQuery("Database.mdb", creation); //בצע את השאילתא
                     Response.Write("תודה לך על ההרשמה, מיד תועבר/י לדף ההתחברות");
+                    Response.Write(" The bday is: " + Request.Form["bday"]);
                     Response.AddHeader("REFRESH", "2;URL=nHMain.html");
                 }
             }
