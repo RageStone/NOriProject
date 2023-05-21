@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class NewUser : System.Web.UI.Page
 {
+    public string message = "no b";
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["UserRow"] == null) //הוספת משתמש חדש
@@ -42,6 +43,7 @@ public partial class NewUser : System.Web.UI.Page
                
                 if (MyAdoHelperAccess.IsExist(db, sql)) //אם שם המשתמש קיים
                 {
+                    message = "user already exists";
                     Response.Write("שם המשתמש קיים, בחר אחד אחר");
                     Response.AddHeader("REFRESH", "2;URL=nHRegister.html"); //המתנה שתי שניות ומעבר לדף ההרשמה שוב
                 }

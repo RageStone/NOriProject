@@ -27,7 +27,7 @@
            // let female = document.getElementById('female');
             let gender = document.getElementById('gender');
             let gender1 = document.getElementsByName('gender');
-
+            let terms = document.getElementById('terms');
 
             //the text
             let text = "";
@@ -133,7 +133,13 @@
                 document.getElementById("demo").innerHTML = text;
             }
 
-
+            //checking terms
+            if (terms.value == null) {
+                text = text + "<br/> Please accept terms"
+                terms.focus();
+                terms.style.backgroundColor == "red";
+                document.getElementById("demo").innerHTML = text;
+            }
 
 
             if (text != "") {

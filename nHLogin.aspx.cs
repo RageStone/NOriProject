@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class nHLogin : System.Web.UI.Page
 {
+    public string errorMessage = string.Empty;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Page.IsPostBack) //For the first page load info
@@ -15,7 +16,7 @@ public partial class nHLogin : System.Web.UI.Page
             MyAdoHelperAccess.ConnectToDb(db);
             string user = Request.Form["uname"];
             string pass = Request.Form["pass1"];
-            string errorMessage = "no error";
+            
             string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
             if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים
             {
@@ -23,8 +24,8 @@ public partial class nHLogin : System.Web.UI.Page
             }
             else //במידה והמשתמש לא קיים
             {
-                errorMessage = "username or password are incorrect";
-                Response.Write("username or password are incorrect");
+                errorMessage = "<b> Username </b> or <b> Password </b> are incorrect";
+                //Response.Write("username or password are incorrect");
                 Response.AddHeader("REFRESH", "10;URL=nHLogin.aspx"); //המתנה שתי שניות ומעבר לדף ההתחברות שוב
             }
         }
