@@ -27,8 +27,8 @@
            // let female = document.getElementById('female');
             let gender = document.getElementById('gender');
             let gender1 = document.getElementsByName('gender');
-            let terms = document.getElementById('terms');
-
+            //let terms = document.getElementById('terms');
+            var terms = document.getElementById('terms');
             //the text
             let text = "";
 
@@ -134,10 +134,8 @@
             }
 
             //checking terms
-            if (terms.value == null) {
+            if (terms.checked == false) { {
                 text = text + "<br/> Please accept terms"
-                terms.focus();
-                terms.style.backgroundColor == "red";
                 document.getElementById("demo").innerHTML = text;
             }
 
@@ -305,7 +303,7 @@
 
             <input type="text" name="lname" id="lname" placeholder="Lastname" />
 
-            <input type="date" name="bdate" id="bdate" placeholder="Birth Date" value=""/>
+            <input type="date" name="bdate" id="bdate" placeholder="Birth Date" value="" />
 
             <div class="container" name="gender">
                 <input type='radio' id="male" name="gender" value="male" />
@@ -323,13 +321,12 @@
             <input type="password" name="pass1" id="pass1" placeholder="Password" />
 
             <input type="password" name="pass2" id="pass2" placeholder="Confirm Password" />
-            <div class="container">
-                <label>
-                    <input type="checkbox" name="terms" id="terms" value="agree" />
-                    <label style="color:#454545" for='terms'>Please allow terms</label>
-                </label>
-            </div>
-            
+
+           <!-- <input type="checkbox" name="terms" id="terms" value="agree" /> אני מאשר/ת את תנאי השימוש והפרטיות-->
+            <input type="checkbox" name="terms" id="terms" />
+    <label style="color:#454545" for='terms'>Please allow terms</label>
+
+
             <h4>Already Have An Account? <a href="nHLogin.aspx">Sign in</a></h4>
             <button type="submit" name="submit" id="submit" value="submit" onclick="return validateForm();">Submit</button>
 

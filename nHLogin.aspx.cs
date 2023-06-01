@@ -20,7 +20,18 @@ public partial class nHLogin : System.Web.UI.Page
             string sql = "select * from [tbl_users] where uname='" + user + "' and upass='" + pass + "'";
             if (MyAdoHelperAccess.IsExist("Database.mdb", sql) == true) //במידה והמשתמש קיים
             {
-                Response.Redirect("nHMain.html");
+                if(user == "admin" && pass == "admin1")
+                {
+                    errorMessage = "<b> Welcome " + user +"</b>";
+                    Response.AddHeader("REFRESH", "5;URL=admin.aspx");
+                }
+                else
+                {
+                    errorMessage = "<b> Loggin " + user + " in </b>";
+                    Response.AddHeader("REFRESH", "5;URL=nHMain.html");
+                }
+                
+                //Response.Redirect("nHMain.html");
             }
             else //במידה והמשתמש לא קיים
             {

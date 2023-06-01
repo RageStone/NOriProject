@@ -142,8 +142,8 @@
                 <h4>Dont Have An Account? <a href="nHRegister.html">Sign Up</a></h4>
                 
                 <button type="submit" onclick="return IsVaild();">Login</button>
-                <p id="demo"></p>
             <h4> <%=errorMessage%></h4>
+
         </div>
     </form>
     
