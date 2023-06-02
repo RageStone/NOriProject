@@ -84,19 +84,11 @@
                 <button type="submit" >Delete</button>
             <br />
             <br />
-            <a href="nHMain.html" style="cursor: pointer;
-                color: #fff;
-                font-size: 16px;
-                text-transform: uppercase;
-                width: 80px;
-                border: 0;
-                padding: 10px 0;
-                margin-top: 10px;
-                margin-left: -5px;
-                border-radius: 5px;
-                background-color: #f45b69;">
-                Main
-            </a>
+            <form action="nHMain.html">
+                <button type="submit">Main</button>
+            </form>
+            
+            
         
         <h4> <%=errorMessage%></h4>
         </div>
