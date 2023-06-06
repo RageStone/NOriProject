@@ -22,13 +22,13 @@ public partial class nHLogin : System.Web.UI.Page
             {
                 if(user == "admin" && pass == "admin1")
                 {
-                    errorMessage = "<b> Welcome " + user +"</b>";
-                    Response.AddHeader("REFRESH", "5;URL=admin.aspx");
+                    errorMessage = "Welcome <b>" + user +"</b>";
+                    Response.AddHeader("REFRESH", "3;URL=admin.aspx");
                 }
                 else
                 {
-                    errorMessage = "<b> Loggin " + user + " in </b>";
-                    Response.AddHeader("REFRESH", "5;URL=nHMain.html");
+                    errorMessage = "Loggin <b>" + user + "</b> in";
+                    Response.AddHeader("REFRESH", "3;URL=nHMain.html");
                 }
                 
                 //Response.Redirect("nHMain.html");
@@ -37,7 +37,7 @@ public partial class nHLogin : System.Web.UI.Page
             {
                 errorMessage = "<b> Username </b> or <b> Password </b> are incorrect";
                 //Response.Write("username or password are incorrect");
-                Response.AddHeader("REFRESH", "10;URL=nHLogin.aspx"); //המתנה שתי שניות ומעבר לדף ההתחברות שוב
+                Response.AddHeader("REFRESH", "5;URL=nHLogin.aspx"); //המתנה שתי שניות ומעבר לדף ההתחברות שוב
             }
         }
     }

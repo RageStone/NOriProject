@@ -54,7 +54,22 @@
                     background-color: #f24353;
                 }
 
-       
+       .but{
+                           cursor: pointer;
+                color: #fff;
+                font-size: 16px;
+                text-transform: uppercase;
+                width: 80px;
+                border: 0;
+                padding: 10px 0;
+                margin-top: 10px;
+                margin-left: -5px;
+                border-radius: 5px;
+                background-color: #f45b69;
+                text-decoration: none;
+                font-family:  sans-serif;
+                display: inline-block;
+       }
 
 
         h2{
@@ -80,17 +95,23 @@
     <form id="form1" runat="server" action="admin.aspx">   
         <div style="text-align:center" class="login">     
                 <h2><b>Manager</b></h2>
+            <h4>Please insert a User to delete</h4>
                 <input type="text" id="uname" name="uname" placeholder="Username"/>    
                 <button type="submit" >Delete</button>
             <br />
             <br />
-            <form action="nHMain.html">
-                <button type="submit">Main</button>
-            </form>
-            
-            
-        
+            <center>
+
+                <div class="but">
+                 <a style='text-align:left; inline-block;text-decoration:none; color:white' href="nHMain.html">Main</a>                 
+                
+            </div>
+                <div class="but">
+                    <a style=' text-decoration:none; color:white' href="nHLogin.aspx">Login</a>
+                </div>
+            </center>     
         <h4> <%=errorMessage%></h4>
+           
         </div>
     </form>
 </body>
