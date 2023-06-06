@@ -52,6 +52,8 @@
 
                 .login > button:hover {
                     background-color: #f24353;
+                    transform: scale(1.1);
+             transition: transform 100ms ease-in-out;
                 }
 
        

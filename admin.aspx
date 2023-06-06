@@ -51,6 +51,8 @@
             }
 
                 .login > button:hover {
+                   transform: scale(1.1);
+             transition: transform 100ms ease-in-out;
                     background-color: #f24353;
                 }
 
@@ -64,11 +66,15 @@
                 padding: 10px 0;
                 margin-top: 10px;
                 margin-left: -5px;
-                border-radius: 5px;
-                background-color: #f45b69;
+                border-radius: 50px;
+                background-color: #0eb523;
                 text-decoration: none;
                 font-family:  sans-serif;
                 display: inline-block;
+       }
+       .but:hover{
+            transform: scale(1.1);
+             transition: transform 100ms ease-in-out;
        }
 
 
@@ -107,7 +113,7 @@
                 
             </div>
                 <div class="but">
-                    <a style=' text-decoration:none; color:white' href="nHLogin.aspx">Login</a>
+                    <a style=' text-decoration:none; color:white;' href="nHLogin.aspx">Login</a>
                 </div>
             </center>     
         <h4> <%=errorMessage%></h4>
