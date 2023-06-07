@@ -35,8 +35,8 @@
             //checking fname
 
             //checking if fname is long enough or too short
-            if ((fname.value.length < 2) || (fname.value.length > 8)) {
-                text = text + "<br/> First name must be atleast then 2 letters and no more then 8";
+            if ((fname.value.length < 2)) {
+                text = text + "<br/> First name must be atleast then 2 letters";
                 fname.focus();
                 fname.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
@@ -44,8 +44,8 @@
             //checking lname
 
             //checking if lname is long enough or too short
-            if ((lname.value.length < 2) || (lname.value.length > 10)) {
-                text = text + "<br/> Last name must be atleast then 2 letters and no more then 10";
+            if ((lname.value.length < 2)) {
+                text = text + "<br/> Last name must be atleast then 2 letters";
                 lname.focus();
                 lname.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
@@ -68,18 +68,18 @@
             //checking phone
 
             //checking phone length
-            if (phone.value.length != 10) {
+            if ((phone.value.length != 10) && (phone.value == "")) {
                 text = text + "<br/> Phone number must be 10 numbers";
                 phone.focus();
                 phone.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
             }
-            if (phone.value == "") {
+            /*if (phone.value == "") {
                 text = text + "<br/> Phone number must be 10 numbers";
                 phone.focus();
                 phone.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
-            }
+            }*/
             //checking the email
             if (email.value == "") {
                 text = text + "<br /> No email";
@@ -90,16 +90,16 @@
             //checking uname
 
             //checking if fname is long enough or too short
-            if ((uname.value.length < 2) || (uname.value.length > 8)) {
-                text = text + "<br/> Username must be atleast then 2 letters and no more then 8";
+            if ((uname.value.length < 2)) {
+                text = text + "<br/> Username must be atleast then 2 letters";
                 uname.focus();
                 uname.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;
             }
 
 
-            if ((pass1.value.length < 4) || (pass1.value.length > 12)) {
-                text = text + "<br/> Password must be atleast then 4 letters and no more then 12";
+            if ((pass1.value.length < 4)) {
+                text = text + "<br/> Password must be atleast then 4 letters";
                 pass1.focus();
                 pass1.style.backgroundColor = "red";
                 document.getElementById("demo").innerHTML = text;

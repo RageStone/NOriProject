@@ -56,7 +56,6 @@
              transition: transform 100ms ease-in-out;
                 }
 
-       
 
 
         h2{

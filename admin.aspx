@@ -98,6 +98,7 @@
     </style>
 </head>
 <body>
+    <br /><br /><br />
     <form id="form1" runat="server" action="admin.aspx">   
         <div style="text-align:center" class="login">     
                 <h2><b>Manager</b></h2>
@@ -114,6 +115,9 @@
             </div>
                 <div class="but">
                     <a style=' text-decoration:none; color:white;' href="nHLogin.aspx">Login</a>
+                </div>
+                <div class="but">
+                     <a style=' text-decoration:none; color:white;' href="PrintTable.aspx">Table</a>
                 </div>
             </center>     
         <h4> <%=errorMessage%></h4>
