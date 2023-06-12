@@ -142,7 +142,7 @@
                 <input type="password" id="pass1" name="pass1" placeholder="Password"/>
                 <h4>Dont Have An Account? <a href="Register.html">Sign Up</a></h4>
                 
-                <button type="submit" onclick="return IsVaild();">Login</button>
+                <button type="submit" onclick="return IsVaild();">Submit</button>
             <h4> <%=errorMessage%></h4>
 
         </div>
