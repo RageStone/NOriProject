@@ -31,7 +31,7 @@ public partial class NewUser : System.Web.UI.Page
                     //message = "user already exists";
                     //Response.Write("שם המשתמש קיים, בחר אחד אחר");
                     message = "User already exists.";
-                    Response.AddHeader("REFRESH", "2;URL=nHRegister.html"); //המתנה שתי שניות ומעבר לדף ההרשמה שוב
+                    Response.AddHeader("REFRESH", "2;URL=Register.html"); //המתנה שתי שניות ומעבר לדף ההרשמה שוב
                 }
 
                 else //הגדרת שאילתת הוספה
@@ -52,7 +52,7 @@ public partial class NewUser : System.Web.UI.Page
                     //Response.Write("תודה לך על ההרשמה, מיד תועבר/י לדף ההתחברות");
                     message = "Thanks you for registering,  you will be now redirected to the home page.";
                     //Response.Write(" The bday is: " + Request.Form["bday"]);
-                    Response.AddHeader("REFRESH", "3;URL=nHMain.html");
+                    Response.AddHeader("REFRESH", "3;URL=Main.html");
                 }
             }
         }

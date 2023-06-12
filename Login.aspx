@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="nHLogin.aspx.cs" Inherits="nHLogin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="nHLogin" %>
 
 <!DOCTYPE html>
 
@@ -135,12 +135,12 @@
 <body>
     
     <br /><br /><br />
-    <form id="form1" runat="server" action="nHLogin.aspx" onsubmit="return IsVaild();">       
+    <form id="form1" runat="server" action="Login.aspx" onsubmit="return IsVaild();">       
         <div style="text-align:center" class="login">     
                 <h2><b>Sign in</b></h2>
                 <input type="text" id="uname" name="uname" placeholder="Username"/>
                 <input type="password" id="pass1" name="pass1" placeholder="Password"/>
-                <h4>Dont Have An Account? <a href="nHRegister.html">Sign Up</a></h4>
+                <h4>Dont Have An Account? <a href="Register.html">Sign Up</a></h4>
                 
                 <button type="submit" onclick="return IsVaild();">Login</button>
             <h4> <%=errorMessage%></h4>

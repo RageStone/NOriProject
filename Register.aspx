@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Debug="true" AutoEventWireup="true" CodeFile="nHRegister.aspx.cs" Inherits="nHRegister" %>
+﻿<%@ Page Language="C#" Debug="true" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="nHRegister" %>
 
 <!DOCTYPE html>
 
@@ -279,7 +279,7 @@
 
                 <input type="password" name="pass2" id="pass2" placeholder="Confirm Password"/>
 
-                <h4>Already Have An Account? <a href="nHLogin.aspx">Sign in</a></h4>
+                <h4>Already Have An Account? <a href="Login.aspx">Sign in</a></h4>
                 <button type="submit" onclick="return validateForm();">Submit</button>
                 
               

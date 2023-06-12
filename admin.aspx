@@ -110,11 +110,11 @@
             <center>
 
                 <div class="but">
-                 <a style='text-align:left; inline-block;text-decoration:none; color:white' href="nHMain.html">Main</a>                 
+                 <a style='text-align:left; inline-block;text-decoration:none; color:white' href="Main.html">Main</a>                 
                 
             </div>
                 <div class="but">
-                    <a style=' text-decoration:none; color:white;' href="nHLogin.aspx">Login</a>
+                    <a style=' text-decoration:none; color:white;' href="Login.aspx">Login</a>
                 </div>
                 <div class="but">
                      <a style=' text-decoration:none; color:white;' href="PrintTable.aspx">Table</a>
