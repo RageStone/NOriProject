@@ -2,7 +2,7 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 body {
-    background-image: url(Photos/bBackrground.jpg)
+    background-image: url(Photos/brian.jpg)
 }
 table, th, td {
     border: 1px solid black;
@@ -12,7 +12,8 @@ h1 {
 }
 .topnav {
     overflow: hidden;
-    background-color: purple;
+    opacity:0%;
+    background-color: red;
 }
 
     .topnav a {
