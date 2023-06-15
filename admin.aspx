@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-            <link rel="icon" type="image/png" href="Photos/familyGuyLogo.png" />
+    <link rel="icon" type="image/png" href="Photos/familyGuyLogo.png" />
     <style>
         body {
             background-image: url(Photos/bBackrground-blurred.jpg);
@@ -18,10 +18,8 @@
             border-radius: 10px;
             width: 400px;
             margin: auto;
-
             top: 50%;
-            left:50%;
-            
+            left: 50%;
         }
 
             .login > input {
@@ -44,84 +42,95 @@
                 width: 80px;
                 border: 0;
                 padding: 10px 0;
-                margin-top: 10px;
+                margin-top: 2px;
                 margin-left: -5px;
                 border-radius: 5px;
                 background-color: #f45b69;
             }
 
                 .login > button:hover {
-                   transform: scale(1.1);
-             transition: transform 100ms ease-in-out;
+                    transform: scale(1.1);
+                    transition: transform 100ms ease-in-out;
                     background-color: #f24353;
                 }
 
-       .but{
-                           cursor: pointer;
-                color: #fff;
-                font-size: 16px;
-                text-transform: uppercase;
-                width: 80px;
-                border: 0;
-                padding: 10px 0;
-                margin-top: 10px;
-                margin-left: -5px;
-                border-radius: 50px;
-                background-color: #0eb523;
-                text-decoration: none;
-                font-family:  sans-serif;
-                display: inline-block;
-       }
-       .but:hover{
-            transform: scale(1.1);
-             transition: transform 100ms ease-in-out;
-       }
 
 
-        h2{
-            font-size: 3em;
-                    font-weight: 300;
-                    color: #a7a7a7;
-                    display: inline-block;
-                    padding-bottom: 5px;
-                    text-shadow: 1px 1px 3px #23203b;
-                    font-family: 'Source Sans Pro', sans-serif;
+        .but {
+            cursor: pointer;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: 90px;
+            border: 0;
+            padding: 10px 0;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-radius: 50px;
+            background-color: #0eb523;
+            text-decoration: none;
+            font-family: sans-serif;
+            display: inline-block;
         }
-        h4{
-            font-size:25px;
+
+            .but:hover {
+                transform: scale(1.1);
+                transition: transform 100ms ease-in-out;
+            }
+
+
+        h2 {
+            font-size: 3em;
             font-weight: 300;
-            color: #8d8d8d;
-            display:flow;
+            color: #a7a7a7;
+            display: inline-block;
+            padding-bottom: 5px;
+            text-shadow: 1px 1px 3px #23203b;
             font-family: 'Source Sans Pro', sans-serif;
         }
 
+        h4 {
+            font-size: 25px;
+            font-weight: 300;
+            color: #8d8d8d;
+            display: flow;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
     </style>
 </head>
 <body>
-    <br /><br /><br />
-    <form id="form1" runat="server" action="admin.aspx">   
-        <div style="text-align:center" class="login">     
-                <h2><b>Manager</b></h2>
+    <br />
+    <br />
+    <br />
+    <form id="form1" runat="server" action="admin.aspx">
+        <div style="text-align: center" class="login">
+            <h2>Manager</h2>
             <h4>Please insert a User to delete</h4>
-                <input type="text" id="uname" name="uname" placeholder="Username"/>    
-                <button type="submit" >Delete</button>
+            <input type="text" id="uname" name="uname" placeholder="Username" />
+            <h4>To View The DataBase click <a href="PrintTable.aspx">here</a></h4>
+            <button type="submit">Delete</button>
+          
+            
             <br />
             <br />
             <center>
 
                 <div class="but">
-                 <a style='text-align:left; inline-block;text-decoration:none; color:white' href="Main.html">Main</a>                 
-                
-            </div>
-                <div class="but">
-                    <a style=' text-decoration:none; color:white;' href="Login.aspx">Login</a>
+                    <a style='text-align: left; inline-block; text-decoration: none; color: white' href="Main.html">Main</a>
+
                 </div>
                 <div class="but">
-                     <a style=' text-decoration:none; color:white;' href="PrintTable.aspx">Table</a>
+                    <a style='text-decoration: none; color: white;' href="Login.aspx">Login</a>
                 </div>
-            </center>     
-        <h4> <%=errorMessage%></h4>
-           
+                <div class="but">
+                    <a style='text-align: left; inline-block; text-decoration: none; color: white' href="Register.html">Register</a>
+
+                </div>
+
+            </center>
+            <h4><%=errorMessage%></h4>
+
         </div>
     </form>
 </body>
