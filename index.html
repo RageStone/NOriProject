@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link href="OfStyleSheet.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="Photos/familyGuyLogo.png" />
+    <style>
+        .gh2 {
+            position: relative;
+            /*animation-name: example;
+            animation-duration: 5s;
+            animation-delay: 0s;*/
+            z-index: 3;
+            position: absolute;
+            text-align: center;
+            opacity: 100%;
+        }
+    </style>
+    <style>
+        .tetext {
+            /*background-color: white;*/
+            animation-name: bground;
+            animation-duration: 3s;
+            animation-delay: 0s;
+            opacity: 100%;
+        }
+
+        @keyframes bground {
+            0% {
+                opacity: 0%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+    </style>
+    <style>
+        .firsyt {
+            animation-name: fist;
+            animation-duration: 4s;
+            animation-delay: 0s;
+        }
+
+        @keyframes fist {
+            0% {
+                opacity: 0%;
+            }
+
+            25% {
+                opacity: 0%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+    </style>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+    <div class="bground"> </div>
+    <div class="firsyt">
+        <div class="topnav">
+            <a style="background-color: #007bff; color: white;" href="Main.html">Home</a>
+            <a class="float" href="Creator.html">Creator</a>
+            <a class="float" href="Table.html">Characters</a>
+            <a class="float" href="About.html">About Me</a>
+            <a class="float" href="#about">Other</a>
+            <a class="float" style="float:right" href="Login.aspx">Login</a>
+            <a class="float" style="float:right" href="Register.html">Register</a>
+
+            <div class="float" style="color:white; float:right">Vists: <div class="website-counter" style="float:right; color: white"></div></div>
+
+        </div>
+    </div>
+    <div class="tetext">
+        <h1 class="glow" style="color:purple;">Family Guy</h1>
+    </div>
+    <div class="firsyt">
+        <h2 style="text-align: left; display: inline-block; border:2px solid black; width: 1000px; background-color: azure">This website provides information about the series in a simple and cool way, while also making it aesthetic and pleasing to explore.</h2>
+
+        <!--  <img src="Photos/seth.jpg" style="float: right; display: inline-block; border: 2px solid white; width: 463.6px; height: 682.6px; background-color: azure " />-->
+        <h2 style="text-align: left; display: inline-block; border:2px solid black; width: 1000px; background-color: azure">Family Guy is an animation sitcom series created by Seth MacFarlane in 1999 and is still running till this day. <br /> The Show centers around the Griffin family: Peter and Lois, Their children, Meg, Chris and Stewie, and their talking dog, Brian.</h2>
+
+
+    </div>
+    <!--asdasd-->
+
+    
+    <script>
+        var counterContainer = document.querySelector(".website-counter");
+        var resetButton = document.querySelector("#reset");
+        var visitCount = localStorage.getItem("page_view");
+
+        // Check if page_view entry is present
+        if (visitCount) {
+            visitCount = Number(visitCount) + 1;
+            localStorage.setItem("page_view", visitCount);
+        } else {
+            visitCount = 1;
+            localStorage.setItem("page_view", 1);
+        }
+        counterContainer.innerHTML = visitCount;
+    </script>
+</body>
+</html>
