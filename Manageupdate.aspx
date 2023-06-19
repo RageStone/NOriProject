@@ -106,13 +106,27 @@
     <form id="form1" runat="server" action="Manageupdate.aspx">
         <div style="text-align: center" class="login">
             <h2>החופש קורא לי...</h2>
-            <h4>Please insert a User to update</h4>
+            <h4><b>Please insert a User to update</b></h4>
             <input type="text" id="uname" name="uname" placeholder="Username" />
-            <h4>Please insert a new First Name</h4>
+            <h4><b>Please insert a new First Name</b></h4>
             <input type="text" id="fname" name="fname" placeholder="Firstname" />
             <h4>To View The DataBase click <a href="PrintTable.aspx">here</a></h4>
             <button type="submit">Update</button>
-          
+           <center>
+
+                <div class="but">
+                    <a style='text-align: left; inline-block; text-decoration: none; color: white' href="Main.html">Main</a>
+
+                </div>
+                <div class="but">
+                    <a style='text-decoration: none; color: white;' href="Login.aspx">Login</a>
+                </div>
+                <div class="but">
+                    <a style='text-align: left; inline-block; text-decoration: none; color: white' href="Register.html">Register</a>
+
+                </div>
+
+            </center>
             
             <br />
             <br />
