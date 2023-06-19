@@ -25,6 +25,11 @@ public partial class nHLogin : System.Web.UI.Page
                     errorMessage = "Welcome <b>" + user +"</b>";
                     Response.AddHeader("REFRESH", "3;URL=admin.aspx");
                 }
+                else if(user == "admin2" && pass == "admin2")
+                {
+                    errorMessage = "Welcome <b>" + user + "</b>";
+                    Response.AddHeader("REFRESH", "3;URL=Manageupdate.aspx");
+                }
                 else
                 {
                     errorMessage = "Loggin <b>" + user + "</b> in";

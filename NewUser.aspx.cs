@@ -47,8 +47,8 @@ public partial class NewUser : System.Web.UI.Page
 
 
                     MyAdoHelperAccess.DoQuery("Database.mdb", creation); //בצע את השאילתא
-                    message = "Thanks you for registering,  you will be now redirected to the home page.";
-                    Response.AddHeader("REFRESH", "3;URL=Main.html");
+                    message = "Thanks you for registering,  you will be now redirected to the Login page.";
+                    Response.AddHeader("REFRESH", "3;URL=Login.aspx");
                 }
             }
         }

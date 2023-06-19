@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="admin.aspx.cs" Inherits="admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Manageupdate.aspx.cs" Inherits="admin" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Manager</title>
+    <title>Update</title>
     <link rel="icon" type="image/png" href="Photos/familyGuyLogo.png" />
     <style>
         body {
-            background-image: url(Photos/bBackrground-blurred.jpg);
+            background-image: url(Photos/rivers.jpg);
         }
 
         .login {
@@ -103,32 +103,19 @@
     <br />
     <br />
     <br />
-    <form id="form1" runat="server" action="admin.aspx">
+    <form id="form1" runat="server" action="Manageupdate.aspx">
         <div style="text-align: center" class="login">
-            <h2>Manager</h2>
-            <h4>Please insert a User to delete</h4>
+            <h2>החופש קורא לי...</h2>
+            <h4>Please insert a User to update</h4>
             <input type="text" id="uname" name="uname" placeholder="Username" />
+            <h4>Please insert a new First Name</h4>
+            <input type="text" id="fname" name="fname" placeholder="Firstname" />
             <h4>To View The DataBase click <a href="PrintTable.aspx">here</a></h4>
-            <button type="submit">Delete</button>
+            <button type="submit">Update</button>
           
             
             <br />
             <br />
-            <center>
-
-                <div class="but">
-                    <a style='text-align: left; inline-block; text-decoration: none; color: white' href="Main.html">Main</a>
-
-                </div>
-                <div class="but">
-                    <a style='text-decoration: none; color: white;' href="Login.aspx">Login</a>
-                </div>
-                <div class="but">
-                    <a style='text-align: left; inline-block; text-decoration: none; color: white' href="Register.html">Register</a>
-
-                </div>
-
-            </center>
             <h4><%=errorMessage%></h4>
 
         </div>
